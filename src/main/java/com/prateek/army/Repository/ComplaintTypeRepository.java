@@ -5,9 +5,13 @@ import com.prateek.army.model.Complainttype;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 import java.util.List;
 
+import static javax.transaction.Transactional.TxType.REQUIRED;
+import static javax.transaction.Transactional.TxType.SUPPORTS;
 
+@Transactional(SUPPORTS)
 public class ComplaintTypeRepository {
 
     Utility util = new Utility();
@@ -27,11 +31,13 @@ public class ComplaintTypeRepository {
         return em.find(Complainttype.class, id);
     }
 
+    @Transactional(REQUIRED)
     public Complainttype create(Complainttype complainttype){
         em.persist(complainttype);
         return complainttype;
     }
 
+    @Transactional(REQUIRED)
     public void delete(Integer id){
         em.remove(em.getReference(Complainttype.class, id));
     }

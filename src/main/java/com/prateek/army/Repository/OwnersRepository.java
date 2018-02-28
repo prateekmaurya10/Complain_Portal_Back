@@ -4,8 +4,13 @@ import com.prateek.army.Utility.Utility;
 import com.prateek.army.model.Owners;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.util.List;
 
+import static javax.transaction.Transactional.TxType.REQUIRED;
+import static javax.transaction.Transactional.TxType.SUPPORTS;
+
+@Transactional(SUPPORTS)
 public class OwnersRepository {
 
    /* @PersistenceContext(unitName = "ComplaintPortalPU")
@@ -28,11 +33,13 @@ public class OwnersRepository {
         return em.find(Owners.class, id);
     }
 
+    @Transactional(REQUIRED)
     public Owners create(Owners owner){
         em.persist(owner);
         return owner;
     }
 
+    @Transactional(REQUIRED)
     public void delete(Integer id){
         em.remove(em.getReference(Owners.class, id));
     }

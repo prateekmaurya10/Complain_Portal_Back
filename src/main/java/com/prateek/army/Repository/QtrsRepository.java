@@ -5,8 +5,13 @@ import com.prateek.army.model.Qtrs;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 import java.util.List;
 
+import static javax.transaction.Transactional.TxType.REQUIRED;
+import static javax.transaction.Transactional.TxType.SUPPORTS;
+
+@Transactional(SUPPORTS)
 public class QtrsRepository {
 
     Utility util = new Utility();
@@ -26,11 +31,13 @@ public class QtrsRepository {
         return em.find(Qtrs.class, id);
     }
 
+    @Transactional(REQUIRED)
     public Qtrs create(Qtrs qtrs){
         em.persist(qtrs);
         return qtrs;
     }
 
+    @Transactional(REQUIRED)
     public void delete(Integer id){
         em.remove(em.getReference(Qtrs.class, id));
     }

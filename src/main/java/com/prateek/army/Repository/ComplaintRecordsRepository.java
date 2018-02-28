@@ -5,8 +5,13 @@ import com.prateek.army.model.Complaintrecords;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 import java.util.List;
 
+import static javax.transaction.Transactional.TxType.REQUIRED;
+import static javax.transaction.Transactional.TxType.SUPPORTS;
+
+@Transactional(SUPPORTS)
 public class ComplaintRecordsRepository {
 
     Utility util = new Utility();
@@ -26,11 +31,13 @@ public class ComplaintRecordsRepository {
         return em.find(Complaintrecords.class, id);
     }
 
+    @Transactional(REQUIRED)
     public Complaintrecords create(Complaintrecords complaintrecords){
         em.persist(complaintrecords);
         return complaintrecords;
     }
 
+    @Transactional(REQUIRED)
     public void delete(Integer id){
         em.remove(em.getReference(Complaintrecords.class, id));
     }
