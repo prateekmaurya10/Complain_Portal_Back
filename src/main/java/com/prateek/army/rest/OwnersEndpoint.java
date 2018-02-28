@@ -25,8 +25,13 @@ public class OwnersEndpoint {
         return Response.ok(owners).build();
     }
 
-    public Long countOwners() {
-        return ownersRepository.countAll();
+    @GET
+    @Path("/count")
+    public Response countOwners() {
+        Long noOfOwners = ownersRepository.countAll();
+        if(noOfOwners == 0)
+            return Response.noContent().build();
+        return Response.ok(noOfOwners).build();
     }
 
     public Owners getOwner(Integer id) {
