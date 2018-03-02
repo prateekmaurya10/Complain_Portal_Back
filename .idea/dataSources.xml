@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="complaintportal@localhost" uuid="99691b74-814b-4d63-8d70-b840a3ee9722">
+    <data-source source="LOCAL" name="complaintPortal@localhost" uuid="74633530-1c13-496b-a1fe-ac729425e742">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/complaintportal</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/complaintPortal</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />
@@ -15,7 +15,7 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="ComplaintPortalPU/Hibernate" uuid="7c4b8195-2324-42dd-92d1-20ca098ed5db">
+    <data-source source="LOCAL" name="ComplaintPortalPU/Hibernate" uuid="b0336ebd-bfff-4ebc-bdc1-57acc1f3d449">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
