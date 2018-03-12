@@ -20,7 +20,7 @@ public class ComplaintTypesEndpoint {
     @Path("/")
     @Produces(APPLICATION_JSON )
     public Response getComplaintType(){
-            List<String> complaintTypes = complaintTypeService.getComplaintTypes();
+            List<com.prateek.army.model.Complainttype> complaintTypes = complaintTypeService.getComplaintTypes();
             if(complaintTypes.size() != 0) {
                 return Response.ok().entity(complaintTypes).build();
             }

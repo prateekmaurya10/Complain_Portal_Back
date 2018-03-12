@@ -33,7 +33,9 @@ public class ComplaintRecordsRepository {
 
     @Transactional(REQUIRED)
     public Complaintrecords create(Complaintrecords complaintrecords){
+        em.getTransaction().begin();
         em.persist(complaintrecords);
+        em.getTransaction().commit();
         return complaintrecords;
     }
 

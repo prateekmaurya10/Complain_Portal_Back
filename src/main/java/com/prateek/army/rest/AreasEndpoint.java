@@ -2,6 +2,7 @@ package com.prateek.army.rest;
 
 import com.prateek.army.Service.AreaService;
 import com.prateek.army.Service.AreaServiceImpl;
+import com.prateek.army.model.Area;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -20,9 +21,9 @@ public class AreasEndpoint {
     @Path("/")
     @Produces(APPLICATION_JSON )
     public Response getAreaNames(){
-        List<String> areaNames = areaService.getAreas();
-        if(areaNames.size() != 0) {
-            return Response.ok().entity(areaNames).build();
+        List<Area> areaList = areaService.getAreas();
+        if(areaList.size() != 0) {
+            return Response.ok().entity(areaList).build();
         }
         else return Response.noContent().build();
     }

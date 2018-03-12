@@ -35,4 +35,9 @@ public class ComplaintRecordsSeviceImpl implements ComplaintRecordsSevice {
 
         return summary;
     }
+
+    public List<Complaintrecords> addComplaint(Complaintrecords complaintrecords) {
+        complaintRecordsRepository.create(complaintrecords);
+        return complaintRecordsRepository.findAll();
+    }
 }

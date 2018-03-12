@@ -1,8 +1,10 @@
 package com.prateek.army.Service;
 
+import com.prateek.army.model.Area;
+
 import java.util.List;
 
 public interface AreaService {
 
-    List<String> getAreas();
+    List<Area> getAreas();
 }
