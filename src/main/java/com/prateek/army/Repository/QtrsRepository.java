@@ -27,8 +27,8 @@ public class QtrsRepository {
         return query.getSingleResult();
     }
 
-    public List<Integer> findByArea(int id) {
-        TypedQuery<Integer> query = (TypedQuery<Integer>) em.createQuery("Select qtrNo from Qtrs q where areaId="+id);
+    public List<Qtrs> findByArea(int id) {
+        TypedQuery<Qtrs> query = (TypedQuery<Qtrs>) em.createQuery("Select q from Qtrs q where areaId="+id);
         return query.getResultList();
     }
 

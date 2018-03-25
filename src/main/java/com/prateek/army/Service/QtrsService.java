@@ -1,10 +1,12 @@
 package com.prateek.army.Service;
 
+import com.prateek.army.model.Qtrs;
+
 import java.util.List;
 
 public interface QtrsService {
 
-    public List<Integer> getQtrs();
+    public List<Qtrs> getQtrs();
 
-    public List<Integer> getQtrsByArea(int id);
+    public List<Qtrs> getQtrsByArea(int id);
 }

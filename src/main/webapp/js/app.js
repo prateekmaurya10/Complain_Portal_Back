@@ -16,15 +16,8 @@ app.config(function($routeProvider) {
         })
         .when("/complaint", {
             templateUrl : "views/ComplaintRegister.html"
-
         })
         .when("/signup", {
             templateUrl : "views/signup.html"
         })
-});
-app.controller("londonCtrl", function ($scope) {
-    $scope.msg = "I love about me London";
-});
-app.controller("parisCtrl", function ($scope) {
-    $scope.msg = "I love contact Paris";
 });
