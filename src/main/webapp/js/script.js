@@ -3,10 +3,10 @@
  */
 
 $(document).ready(function() {
-
+/*
     $("button").click(function () {
        alert("Your complaint has been registered.");
-    });
+    });*/
 });
 
 function postResult() {
