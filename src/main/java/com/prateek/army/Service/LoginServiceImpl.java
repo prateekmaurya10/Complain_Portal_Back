@@ -19,7 +19,7 @@ public class LoginServiceImpl implements LoginService {
         List<Login> logins = loginRepository.findAll();
         Login responseLogin = null;
         for(Login login : logins){
-            if(login.getEmailId() == emailAddress && login.getPassword() == password)
+            if(login.getEmailId().equalsIgnoreCase(emailAddress) && login.getPassword().equals(password))
                 responseLogin = login;
         }
         return responseLogin;

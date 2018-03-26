@@ -24,7 +24,7 @@ public class OwnersServiceImpl implements OwnersService {
         List<Owners> allOwners = ownersRepository.findAll();
         int ownerId = 0;
         for(Owners owner1 : allOwners){
-            if(owner1 == owner)
+            if(owner1.equals(owner))
                 ownerId = owner1.getId();
         }
         return ownerId;

@@ -31,7 +31,9 @@ public class LoginRepository {
 
     @Transactional(REQUIRED)
     public Login create(Login login){
+        em.getTransaction().begin();
         em.persist(login);
+        em.getTransaction().commit();
         return login;
     }
 

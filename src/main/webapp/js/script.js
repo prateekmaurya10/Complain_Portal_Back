@@ -44,33 +44,47 @@ function signUpPost() {
     let inputPassword = document.getElementById("inputPassword").value;
     let areaname = (document.getElementById("locality-dropdown")).value;
     let qtrId = (document.getElementById("QtrNo")).value;
-    if(areaname ==0) {
+    let rank = document.getElementById("rank").value;
+    let newOwner = new CreateOwner(firstName, middleName, lastName, inputEmail, inputPassword, areaname, qtrId, rank);
+    console.log(JSON.stringify(newOwner));
+    if(areaname ===0) {
         alert("Please input a valid area")
-    } else if(qtrId == 0) {
+    } else if(qtrId === 0) {
         alert("Please input a valid qtrId")
     } else {
-        let newOwner = new CreateOwner(firstName, middleName, lastName, inputEmail, inputPassword, areaname, qtrId);
         console.log(JSON.stringify(newOwner));
+        const post_url = 'http://localhost:8080/webapi/signup/';
+        const post_request = new XMLHttpRequest();
+        post_request.open('POST',post_url, true);
+        post_request.setRequestHeader("Content-type", "application/json");
+        post_request.send(JSON.stringify(newOwner));
     }
 }
-function CreateOwner(firstName, middleName, lastName, inputEmail, inputPassword, areaname, qtrId) {
+function CreateOwner(firstName, middleName, lastName, inputEmail, inputPassword, areaname, qtrId, rank) {
     this.firstName = firstName;
     this.middleName = middleName;
     this.lastName = lastName;
-    this.inputEmail = inputEmail;
-    this.inputPassword = inputPassword;
-    this.areaname = areaname;
-    this.qtrId = qtrId
+    this.emailAddress = inputEmail;
+    this.password = inputPassword;
+    this.area = areaname;
+    this.qtrNo = qtrId;
+    this.rank = rank;
 }
 function loginForm() {
-    let email = document.getElementById("InputEmailID");
-    let password = document.getElementById("GetInputPassword");
-    let userLogin = new UserDetails(email, password);
+    let emailAddress = document.getElementById("InputEmailID").value;
+    let password = document.getElementById("GetInputPassword").value;
+    let userLogin = new UserDetails(emailAddress, password);
     console.log(JSON.stringify(userLogin));
-}
+    const post_url = 'http://localhost:8080/webapi/login/';
+
+    const post_request = new XMLHttpRequest();
+    post_request.open('POST',post_url, true);
+    post_request.setRequestHeader("Content-type", "application/json");
+    post_request.send(JSON.stringify(userLogin));
+    }
 
 
-function UserDetails(username, password) {
-    this.username = username;
+function UserDetails(emailAddress, password) {
+    this.emailAddress = emailAddress;
     this.password = password;
 }

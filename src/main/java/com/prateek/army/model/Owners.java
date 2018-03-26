@@ -80,8 +80,7 @@ public class Owners {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Owners owners = (Owners) o;
-        return id == owners.id &&
-                Objects.equals(firstName, owners.firstName) &&
+        return  Objects.equals(firstName, owners.firstName) &&
                 Objects.equals(middleName, owners.middleName) &&
                 Objects.equals(lastName, owners.lastName) &&
                 Objects.equals(rank, owners.rank) &&

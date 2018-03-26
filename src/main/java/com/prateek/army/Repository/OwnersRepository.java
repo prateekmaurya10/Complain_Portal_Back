@@ -35,7 +35,9 @@ public class OwnersRepository {
 
     @Transactional(REQUIRED)
     public Owners create(Owners owner){
+        em.getTransaction().begin();
         em.persist(owner);
+        em.getTransaction().commit();
         return owner;
     }
 

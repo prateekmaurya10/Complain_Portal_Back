@@ -3,6 +3,7 @@ package com.prateek.army.Service;
 import com.prateek.army.Repository.ComplaintRecordsRepository;
 import com.prateek.army.model.Complaintrecords;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,6 +38,7 @@ public class ComplaintRecordsSeviceImpl implements ComplaintRecordsSevice {
     }
 
     public List<Complaintrecords> addComplaint(Complaintrecords complaintrecords) {
+        complaintrecords.setCreated(new Timestamp(System.currentTimeMillis()));
         complaintRecordsRepository.create(complaintrecords);
         return complaintRecordsRepository.findAll();
     }

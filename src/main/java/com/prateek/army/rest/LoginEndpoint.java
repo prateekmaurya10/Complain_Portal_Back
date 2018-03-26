@@ -7,7 +7,8 @@ import com.prateek.army.Service.OwnersServiceImpl;
 import com.prateek.army.model.Login;
 import com.prateek.army.model.Owners;
 
-import javax.ws.rs.GET;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
@@ -19,16 +20,39 @@ public class LoginEndpoint {
 
     private LoginService loginService = new LoginServiceImpl();
 
-    @GET
+    @POST
     @Path("/")
+    @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    public Response loginVerification(String emailAddress, String password) {
-        Login loginObj = loginService.retrieveLoginObj(emailAddress,password);
+    public Response loginVerification(LoginForm loginForm) {
+        Login loginObj = loginService.retrieveLoginObj(loginForm.getEmailAddress(),loginForm.getPassword());
         OwnersService ownersService = new OwnersServiceImpl();
         Owners owner;
         if (loginObj != null) {
             owner = ownersService.findOwnerById(loginObj.getOwnerId());
             return Response.ok().entity(owner).build();
-        } else return Response.noContent().build();
+        } else return Response.status(Response.Status.UNAUTHORIZED).entity(new String("Invalid Email ID or Password.")).build();
     }
+}
+
+class LoginForm {
+    private String emailAddress;
+    private String password;
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String username) {
+        this.emailAddress = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 }

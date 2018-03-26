@@ -9,16 +9,11 @@ import java.util.Objects;
 @Entity
 public class Lookuptable {
 
-    @Id
     private int ownerId;
     private int qtrId;
     private int areaId;
 
-    public void setOwnerId(Integer ownerId) {
-        this.ownerId = ownerId;
-    }
-
-    @Basic
+    @Id
     @Column(name = "ownerId")
     public int getOwnerId() {
         return ownerId;
