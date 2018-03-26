@@ -6,7 +6,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="ComplaintPortalPU" value="4e375c9e-74f9-4dc8-b85a-52a5031de073" />
+          <factory-entry name="ComplaintPortalPU" value="adb78204-ef5d-4538-8cca-df13729eb1ae" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
       </configuration>

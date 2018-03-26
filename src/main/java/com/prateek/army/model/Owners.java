@@ -13,6 +13,7 @@ public class Owners {
     private String middleName;
     private String lastName;
     private String rank;
+    private Integer qtrsId;
 
     @Id
     @Column(name = "ID")
@@ -64,6 +65,16 @@ public class Owners {
         this.rank = rank;
     }
 
+    @Basic
+    @Column(name = "qtrsId")
+    public Integer getQtrsId() {
+        return qtrsId;
+    }
+
+    public void setQtrsId(Integer qtrsId) {
+        this.qtrsId = qtrsId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -73,12 +84,13 @@ public class Owners {
                 Objects.equals(firstName, owners.firstName) &&
                 Objects.equals(middleName, owners.middleName) &&
                 Objects.equals(lastName, owners.lastName) &&
-                Objects.equals(rank, owners.rank);
+                Objects.equals(rank, owners.rank) &&
+                Objects.equals(qtrsId, owners.qtrsId);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, firstName, middleName, lastName, rank);
+        return Objects.hash(id, firstName, middleName, lastName, rank, qtrsId);
     }
 }

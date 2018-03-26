@@ -43,4 +43,5 @@ public class OwnersRepository {
     public void delete(Integer id){
         em.remove(em.getReference(Owners.class, id));
     }
+
 }

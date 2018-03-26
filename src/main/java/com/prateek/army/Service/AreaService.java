@@ -7,4 +7,6 @@ import java.util.List;
 public interface AreaService {
 
     List<Area> getAreas();
+
+    int getAreaId(String areaName);
 }

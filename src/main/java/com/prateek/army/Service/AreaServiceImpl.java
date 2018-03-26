@@ -19,4 +19,15 @@ public class AreaServiceImpl implements AreaService {
         }*/
         return areasList;
     }
+
+    @Override
+    public int getAreaId(String areaName){
+        List<Area> areas = areasRepository.findAll();
+        int areaId = 0;
+        for(Area area : areas){
+            if(area.getAreaName() == areaName)
+                areaId = area.getId();
+        }
+        return areaId;
+    }
 }

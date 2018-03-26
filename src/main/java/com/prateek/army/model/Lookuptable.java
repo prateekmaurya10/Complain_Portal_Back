@@ -14,6 +14,10 @@ public class Lookuptable {
     private int qtrId;
     private int areaId;
 
+    public void setOwnerId(Integer ownerId) {
+        this.ownerId = ownerId;
+    }
+
     @Basic
     @Column(name = "ownerId")
     public int getOwnerId() {

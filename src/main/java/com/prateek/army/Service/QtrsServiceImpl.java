@@ -20,4 +20,16 @@ public class QtrsServiceImpl implements QtrsService {
 
         return qtrsRepository.findByArea(id);
     }
+
+    //Get QtrId to be inserted in Owners table.
+    @Override
+    public int getQtrId(int areaId,int qtrNo){
+        List<Qtrs> qtrs = qtrsRepository.findByArea(areaId);
+        int qtrId = 0;
+        for(Qtrs qtr :qtrs){
+            if(qtr.getQtrNo() == qtrNo)
+                qtrId = qtr.getId();
+        }
+        return qtrId;
+    }
 }

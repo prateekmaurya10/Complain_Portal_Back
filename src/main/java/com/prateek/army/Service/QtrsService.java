@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface QtrsService {
 
-    public List<Qtrs> getQtrs();
+    List<Qtrs> getQtrs();
 
-    public List<Qtrs> getQtrsByArea(int id);
+    List<Qtrs> getQtrsByArea(int id);
+
+    int getQtrId(int areaId,int qtrNo);
 }
