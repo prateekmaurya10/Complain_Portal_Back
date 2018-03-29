@@ -9,6 +9,8 @@ $(document).ready(function() {
     });*/
 });
 
+
+
 function postResult() {
     let qtr_dropdown = document.getElementById('QtrNo');
     let dropdown= document.getElementById("locality-dropdown");
@@ -69,22 +71,4 @@ function CreateOwner(firstName, middleName, lastName, inputEmail, inputPassword,
     this.area = areaname;
     this.qtrNo = qtrId;
     this.rank = rank;
-}
-function loginForm() {
-    let emailAddress = document.getElementById("InputEmailID").value;
-    let password = document.getElementById("GetInputPassword").value;
-    let userLogin = new UserDetails(emailAddress, password);
-    console.log(JSON.stringify(userLogin));
-    const post_url = 'http://localhost:8080/webapi/login/';
-
-    const post_request = new XMLHttpRequest();
-    post_request.open('POST',post_url, true);
-    post_request.setRequestHeader("Content-type", "application/json");
-    post_request.send(JSON.stringify(userLogin));
-    }
-
-
-function UserDetails(emailAddress, password) {
-    this.emailAddress = emailAddress;
-    this.password = password;
 }

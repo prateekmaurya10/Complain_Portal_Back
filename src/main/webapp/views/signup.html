@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>SignUp</title>
+    <script src="populate.js"></script>
 </head>
 <body>
-<div class="container">
+<div class="container" ng-controller="AreaController">
 
     <h1 align="center">SIGN UP</h1>
-    <div align="center">
-        <button type="submit" class="btn btn-secondary" id="populate" onclick="populateAreas();">Populate</button>
-    </div>
     <form>
     <div class="form-group">
         <label for="firstName">First Name</label>
@@ -57,11 +55,12 @@
     </div>
 
     <div align="center">
-        <button type="submit" class="btn btn-primary" id="signUp" onclick="signUpPost();">Submit</button>
+        <a href="#!/login">
+        <button type="submit" class="btn btn-primary" id="signUp" onclick="signUpPost();" >Submit</button>
+        </a>
     </div>
 
 </form>
 </div>
-<script src="populate.js"></script>
 </body>
 </html>

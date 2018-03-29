@@ -5,7 +5,7 @@
     <title>Login</title>
 </head>
 <!--<body onload="populateDropdown();">-->
-<div class="container">
+<div class="container" ng-controller="LoginValidate">
 
     <h1 align="center">LOGIN</h1>
 
@@ -25,7 +25,9 @@
         <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
     <div align="center">
-    <button type="submit" class="btn btn-primary" id="submitForm" onclick="loginForm()">Submit</button>
+
+    <button type="submit" class="btn btn-info" id="submit" ng-click="login()">SubmitFrom</button>
+
     </div>
 
 </form>
