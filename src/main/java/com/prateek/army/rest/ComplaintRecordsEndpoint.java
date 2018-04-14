@@ -42,7 +42,8 @@ public class ComplaintRecordsEndpoint {
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
     public Response addNewComplaint(Complaintrecords complaintrecords) {
-        return Response.ok().entity(complaintRecordsSevice.addComplaint(complaintrecords)).build();
+        Complaintrecords record = complaintRecordsSevice.addComplaint(complaintrecords);
+        return Response.ok().entity(record).build();
     }
 
 }

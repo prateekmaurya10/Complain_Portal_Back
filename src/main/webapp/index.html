@@ -3,25 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>YELLOW</title>
-    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
     </script>
-    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <script src="js/ngStorage.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
 
 </head>
 <body class="bg-light" ng-app="ComplaintPortal">
-
+<!--
+<div ng-controller="MainController">
+    <p>{{user}}</p>
+    <p> {{userName}}</p>
+    <input ng-model="userInput">
+    <button ng-click="addUser()">addUser</button>
+</div>
+-->
 <div ng-view>
-<!-- JavaScript -->
-<script src="js/script.js"></script>
-<!-- Modules -->
-<script type="text/javascript" src="js/app.js"></script>
-<!-- Controllers -->
-<!-- Services -->
-<script src="views/populate.js"></script>
-    <script src="js/loginValidation.js"></script>
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <!-- Modules -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <!-- Controllers -->
+    <!-- Services -->
+    <script src="js/controllers/populate.js"></script>
+    <script src="js/controllers/loginValidation.js"></script>
+    <script src = "js/controllers/controller.js"></script>
+    <script src = "js/controllers/complaintRegister.js"></script>
+    <script src = "js/controllers/complaintList.js"></script>
+    <script src = "js/controllers/SignUp.js"></script>
+    <script src = "js/controllers/SignOut.js"></script>
+    <script src = "js/controllers/loginCheck.js"></script>
+
 </div>
 </body>
 </html>

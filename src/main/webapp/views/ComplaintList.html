@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<div ng-controller="loginCheck"></div>
+<div class="container">
+
+    <div align="right" ng-controller="SignOut">
+        <b>{{user}}  </b><button type="button" class="btn btn-danger" ng-click="signOutFunction()">Sign Out</button>
+    </div>
+<div  ng-controller="ComplaintList">
+        <h1 align="center">COMPLAINT PORTAL </h1>
+
+    <div class="alert alert-primary" role="alert">
+        THANK YOU {{user}}! <br>
+        Your complaint has been registered
+    </div>
+
+    <ul class="list-group">
+     <!--   <li class="list-group-item">COMPLAINT ID        : {{id}}</li>
+     -->   <li class="list-group-item">COMPLAINT TYPE      : {{complaintType}}</li>
+        <li class="list-group-item">SUMMARY             : {{summary}}</li>
+    </ul>
+
+
+</div>
+</div>
+<script src="../js/script.js"></script>
+</body>
+</html>

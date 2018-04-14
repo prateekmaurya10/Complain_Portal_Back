@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>ComplainRegister</title>
+    <script src ="../js/controllers/complaintRegister.js"></script>
+
 </head>
 <body class="bg-light">
+<div ng-controller="loginCheck"></div>
 
-<div class="container" ng-controller="PopulateController">
-    
+<div class="container">
 
-    <div align="center"><h1>COMPLAINT PORTAL</h1></div>
+    <div align="right" ng-controller="SignOut" class="space">
+       <b>{{user}}  </b> <button type="button" class="btn btn-danger" ng-click="signOutFunction()">Sign Out</button>
+    </div>
+    <div ng-controller="CompTypeController">
 
+    <div align="center" class="space"><h1>COMPLAINT PORTAL</h1></div>
     <form class="container">
-        <div class="form-group" >
+        <!--<div class="form-group" >
             <label for="locality-dropdown">Area</label>
             <select class="custom-select" id="locality-dropdown" name="locality">
                 <option selected>Select Area</option>
@@ -25,7 +31,7 @@
                 <option selected>Select Quarter Number</option>
             </select>
         </div>
-        <div class="form-group">
+        --><div class="form-group">
             <label for="ComplaintType">Complaint Type</label>
             <select class="custom-select" id="ComplaintType" name="ComplaintType">
                 <option selected>Select Complaint Type</option>
@@ -38,11 +44,11 @@
         </div>
     </form>
 
-    <div align="center">
-        <button type="button" class="btn btn-success" onclick="postResult()">Submit</button>
-
-    </div>
+    <div align="center" ng-controller = "postComplaint">
+        <button type="button" class="btn btn-success" ng-click="postResult()">Submit</button>
 </div>
+    </div>
 
+</div>
 </body>
 </html>

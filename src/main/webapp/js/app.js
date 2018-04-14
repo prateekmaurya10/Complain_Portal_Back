@@ -1,7 +1,7 @@
 /**
  * Created by dtanwani on 3/5/2018.
  */
-var app = angular.module("ComplaintPortal", ['ngRoute']);
+var app = angular.module("ComplaintPortal", ['ngRoute','ngStorage']);
 
 app.config(function($routeProvider) {
     $routeProvider
@@ -19,5 +19,14 @@ app.config(function($routeProvider) {
         })
         .when("/signup", {
             templateUrl : "views/signup.html"
+        })
+        .when("/complaintList", {
+            templateUrl : "views/ComplaintList.html"
+        })
+        .when("/error", {
+            templateUrl : "views/Error.html"
+        })
+        .when("/alreadyLogged", {
+            templateUrl : "views/AlreadyLogged.html"
         })
 });

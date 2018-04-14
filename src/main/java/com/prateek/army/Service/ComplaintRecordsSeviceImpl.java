@@ -37,9 +37,9 @@ public class ComplaintRecordsSeviceImpl implements ComplaintRecordsSevice {
         return summary;
     }
 
-    public List<Complaintrecords> addComplaint(Complaintrecords complaintrecords) {
+    public Complaintrecords addComplaint(Complaintrecords complaintrecords) {
         complaintrecords.setCreated(new Timestamp(System.currentTimeMillis()));
-        complaintRecordsRepository.create(complaintrecords);
-        return complaintRecordsRepository.findAll();
+        return complaintRecordsRepository.create(complaintrecords);
+        //return complaintRecordsRepository.findAll();
     }
 }

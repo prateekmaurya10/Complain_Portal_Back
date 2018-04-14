@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>SignUp</title>
-    <script src="populate.js"></script>
+    <script src="../js/controllers/populate.js"></script>
 </head>
 <body>
-<div class="container" ng-controller="AreaController">
+<div ng-controller="AlreadyLoggedIn"></div>
+<div class="container" ng-controller="PopulateController">
 
     <h1 align="center">SIGN UP</h1>
     <form>
@@ -53,14 +53,15 @@
         <option selected>Select Quarter Number</option>
     </select>
     </div>
+    </form>
+</div>
 
-    <div align="center">
+    <div align="center" ng-controller="SignUp">
         <a href="#!/login">
-        <button type="submit" class="btn btn-primary" id="signUp" onclick="signUpPost();" >Submit</button>
+        <button type="submit" class="btn btn-primary" id="signUp" ng-click="signUpPost();" >Submit</button>
         </a>
     </div>
 
-</form>
-</div>
+<script src = "../js/controllers/SignUp.js"></script>
 </body>
 </html>

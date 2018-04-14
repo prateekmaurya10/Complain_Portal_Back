@@ -10,5 +10,5 @@ public interface ComplaintRecordsSevice {
 
     public List<String> getSummary();
 
-    public List<Complaintrecords> addComplaint(Complaintrecords complaintrecords);
+    public Complaintrecords addComplaint(Complaintrecords complaintrecords);
 }

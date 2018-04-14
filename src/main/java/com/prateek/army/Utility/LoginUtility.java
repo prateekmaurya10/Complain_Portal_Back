@@ -93,10 +93,10 @@ public class LoginUtility {
     }
 
     public Owners createOwnerObj(LoginUtility loginUtility){
-        int qtrId = qtrsService.getQtrId(areaService.getAreaId(loginUtility.getArea()),loginUtility.getQtrNo());
+        //int qtrId = qtrsService.getQtrId(areaService.getAreaId(loginUtility.getArea()),loginUtility.getQtrNo());
 
         Owners owner = new Owners();
-        owner.setQtrsId(qtrId);
+        owner.setQtrsId(loginUtility.getQtrNo());
         owner.setFirstName(loginUtility.getFirstName());
         owner.setMiddleName(loginUtility.getMiddleName());
         owner.setLastName(loginUtility.getLastName());
