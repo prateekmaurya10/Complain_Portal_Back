@@ -13,7 +13,7 @@ public class Owners {
     private String middleName;
     private String lastName;
     private String rank;
-    private Integer qtrsId;
+    private Integer qtrsId=1;
 
     @Id
     @Column(name = "ID")
